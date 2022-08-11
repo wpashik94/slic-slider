@@ -1,41 +1,25 @@
-// testimonial slider
 function custom_add_scripts_in_footer(){
 ?>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
 <script>
- jQuery(document).ready(function($) {
- jQuery('.ypbd_testimonial-col .ypbd-testimonial-main-wrapper').slick({
-	dots: false,
-	arrows: false,
-	infinite: true,
-	Speed: 2000,
-	autoplay: true,
-	slidesToShow: 2,
-	slidesToScroll: 1,
-	responsive: [
-	{
-		breakpoint: 1024,
-			settings: {
-			slidesToShow: 2,
-			slidesToScroll: 1,
+	jQuery(document).ready(function($) {
+		
+		//testimonial slider
+		jQuery('.tripleatech-testimonial-col .elementor-widget-wrap').slick({
+			dots: true,
+			arrows: false,
 			infinite: true,
-			}
-		},
-		{
-		breakpoint: 800,
-		settings: {
-		slidesToShow: 1,
-		slidesToScroll: 1
-		}
-		},
-	]
-});
-});
+			Speed: 2000,
+			autoplay: false,
+			slidesToShow: 1,
+			slidesToScroll: 1
+		});
+	});
 
 </script>
+	
 <?php
 }
+add_action('wp_footer', 'custom_add_scripts_in_footer');
